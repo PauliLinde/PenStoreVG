@@ -1,0 +1,36 @@
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #a5d1a7;
+    color: #33382d;
+}
+
+main {
+    flex: 1;
+    background-color: #a5d1a7;
+    color: #33382d;
+}
+
+/* Header styling */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #33382d;
+}
+
+/* Produkt-sektion styling */
+#Products {
+    min-height: 200px;
+    background-color: #a5d1a7;
+    color: #33382d;
+}
+
+/* Footer styling */
+footer {
+    margin-top: auto;
+    background-color: #d0d1c9;
+    color: #33382d;
+}
