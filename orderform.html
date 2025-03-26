@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+</head>
+<body>
+    <form name="customerForm" action="" onsubmit="return validateForm()">
+        <label for="customerName">För- och Efternamn</label><br />
+        <input type="text" name="customerName" id="customerName" /> <br />
+        <label for="e-mail">E-post</label><br />
+        <input type="email" name="e-mail" id="e-mail" /><br />
+        <label for="phoneNumber">Telefonnummer</label><br />
+        <input type="text" name="phoneNumber" id="phoneNumber" /><br />
+        <label for="street">Gatuadress</label><br />
+        <input type="text" name="street" id="street" /><br />
+        <label for="zipCode">Postnummer</label><br />
+        <input type="text" name="zipCode" id="zipCode" /><br />
+        <label for="city">Ort</label><br />
+        <input type="text" name="city" id="city" /><br />
+        <input type="submit" value="Submit" />
+      </form>
+      <script src="javascript.js"></script>
+</body>
+</html>
