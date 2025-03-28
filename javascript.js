@@ -13,7 +13,6 @@ output += `
   <img src="${product.image}" class="card-img-top" alt="${product.title}">
   <div class="card-body">
     <h5 class="card-title">${product.title}</h5>
-    <p class="card-text">${product.description}</p>
     <a href="order.html?id=${product.id}" class="btn btn-secondary">Buy ${product.price}</a>
   </div>
 </div>
