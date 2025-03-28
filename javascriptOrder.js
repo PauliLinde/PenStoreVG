@@ -11,13 +11,13 @@ console.log(product)
 document.getElementById('itemToOrder').innerHTML =
     `<div class="row g-0">
         <div class="col-md-4">
-            <img src="${product[0]}" class="img-fluid rounded-start" alt="${product[1]}">
+            <img src="${product[0]}" id="image-order" class="img-fluid rounded-start" alt="${product[1]}">
         </div>
         <div class="col-md-8">
         <div class="card-body">
             <h5 class="card-title">${product[1]}</h5>
             <p class="card-text">${product[2]}</p>
-            <p class="card-text"><small class="text-body-secondary">${product[3]}$</small></p>
+            <p class="card-text"><small class="text-body-secondary">${(product[3] * 10).toFixed(2)}kr</small></p>
             </div>
         </div>
     </div>

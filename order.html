@@ -28,21 +28,22 @@
       </header>
 
       <!--Vald produkt-->
-      <div id="itemToOrder" class="card mb-3" style="max-width: 540px;"></div>
+      <div id="itemToOrder" class="card"></div>
+    
 
     <form name="customerForm" action="" onsubmit="return validateForm()">
         <label for="customerName" id="nameLable">För- och Efternamn:</label><br />
-        <input type="text" name="customerName" id="customerName" /> <br />
+        <input type="text" name="customerName" id="customerName" placeholder="Sven Svensson"/> <br />
         <label for="text" id="mailLable">E-post:</label><br />
-        <input type="text" name="e-mail" id="e-mail" /><br />
+        <input type="text" name="e-mail" id="e-mail" placeholder="namn@mail.com"/><br />
         <label for="phoneNumber" id="phoneLable">Telefonnummer:</label><br />
-        <input type="text" name="phoneNumber" id="phoneNumber" /><br />
+        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="073123456"/><br />
         <label for="street" id="streetLable">Gatuadress:</label><br />
-        <input type="text" name="street" id="street" /><br />
+        <input type="text" name="street" id="street" placeholder="Strandvägen 1"/><br />
         <label for="zipCode" id="zipLable">Postnummer:</label><br />
-        <input type="text" name="zipCode" id="zipCode" /><br />
+        <input type="text" name="zipCode" id="zipCode" placeholder="12345"/><br />
         <label for="city" id="cityLable">Ort:</label><br />
-        <input type="text" name="city" id="city" /><br />
+        <input type="text" name="city" id="city" placeholder="Stockholm"/><br />
         <input type="submit" value="Beställ" />
       </form>
       <h2>

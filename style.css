@@ -74,6 +74,26 @@ main {
     height: 100vh; /* Full viewport height */
 }
 
+/* Layout på ordersidan */
+#itemToOrder {
+    margin: 2rem;
+    min-width: 95%;
+}
+
+form {
+    margin: 2rem;
+}
+
+input{
+    width: 50%;
+    height: 30px;
+    margin-bottom: 1rem
+}
+
+input[type="submit"] {
+    width: 20%;
+}
+
 /* Footer styling */
 footer {
     margin-top: auto;
