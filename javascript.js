@@ -13,7 +13,7 @@ output += `
   <img src="${product.image}" class="card-img-top" alt="${product.title}">
   <div class="card-body">
     <h5 class="card-title">${product.title}</h5>
-    <a href="order.html?id=${product.id}" class="btn btn-secondary">Buy ${product.price}</a>
+    <a href="order.html?id=${product.id}" class="btn btn-secondary">Köp ${(product.price * 10).toFixed(2)}kr</a>
   </div>
 </div>
 </div>
