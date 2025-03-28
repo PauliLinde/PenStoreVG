@@ -91,4 +91,3 @@ function validateForm() {
 
   return validater;
 }
-//zipcode.length < 5 ||zipcode.length > 5
