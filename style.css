@@ -17,9 +17,11 @@ main {
 
 /* Header styling */
 .navbar-brand {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #33382d;
+    text-shadow: 2px 2px 4px rgba(71, 78, 64, 0.5);
+    color: #363b2f;
+    margin: 0;
  
 }
 
@@ -63,10 +65,13 @@ main {
 .card-text {
     height: 100px;        
     overflow: hidden;
+}
 
-  
-  
-    
+.hero {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Full viewport height */
 }
 
 /* Footer styling */
