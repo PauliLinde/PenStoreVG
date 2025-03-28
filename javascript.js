@@ -9,13 +9,13 @@ let output = '<div class="row">'
 
 products.forEach(product => {
 output += `
-<div class="col-md-4">
+<div class="col-12 col-md-6 col-lg-3 mb-4">
 <div class="card" style="width: 18rem;">
   <img src="${product.image}" class="card-img-top" alt="${product.title}">
   <div class="card-body">
     <h5 class="card-title">${product.title}</h5>
     <p class="card-text">${product.description}</p>
-    <a href="order.html?id=${product.id}" class="btn btn-primary">Buy ${product.price}</a>
+    <a href="order.html?id=${product.id}" class="btn btn-secondary">Buy ${product.price}</a>
   </div>
 </div>
 </div>
