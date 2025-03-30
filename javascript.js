@@ -1,3 +1,4 @@
+/*
 fetch("https://fakestoreapi.com/products")
   .then((res) => res.json())
   .then((products) => render(products));
@@ -26,3 +27,4 @@ localStorage.setItem(product.id, JSON.stringify(productInfo))
 
     document.getElementById('Products').innerHTML = output
 }
+    */
