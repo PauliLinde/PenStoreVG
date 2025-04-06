@@ -5,12 +5,12 @@ function loadProductPage() {
 }
 
 function render(products) {
-  let output = '<div class="row">';
+  let output = '<div class="row g-4">';
 
   products.forEach((product) => {
     output += `
-<div class="col-12 col-md-6 col-lg-3 mb-4">
-<div class="card" style="width: 18rem;">
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+<div class="card" style="width: 100%">
   <img src="${product.image}" class="card-img-top" alt="${product.title}">
   <div class="card-body">
     <h5 class="card-title">${product.title}</h5>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pen Store</title>
@@ -11,8 +11,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body onload="loadProductPage()">
+</head>
+<body onload="loadProductPage()">
     <!--rubrik-->
     <header class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
@@ -27,11 +27,10 @@
       </div>
     </header>
   
-
     <!--huvudsektion med produkterna-->
     <main class="py-5">
       <div class="container">
-        <div><h2 class="col-12 col-md-6 col-lg-4">Products</h2></div>
+        <h2 class="text-center">Products</h2> <!-- Justerad rubrik: Tog bort kolumnklasser -->
       
         <div class="row g-4" id="Products">
           <!-- Här kommer produkterna att läggas in från API -->
@@ -52,7 +51,6 @@
               </div>
               <!-- Second Column -->
               <div class="col-12 col-md-6">
-                 
                   <h3>Customer Service Hours</h3>
                   <p>Monday-Friday: 09:00 - 17:00</p>
                   <p>Saturday-Sunday: Closed</p>
@@ -67,5 +65,5 @@
   </footer>
 
     <script src="javascriptOrder.js"></script>
-  </body>
+</body>
 </html>
