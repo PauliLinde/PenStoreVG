@@ -82,8 +82,8 @@ function loadCompleteOrder() {
               <p class="card-text">${product[2]}</p>
               -->
               <p class="card-text"><small class="text-body-secondary">${(product[3] * 10).toFixed(2)}kr</small></p>
-              <p class="card-text">Order Complete!</p>
-              <a href="product.html" class="btn btn-primary">Back to shoping</a>
+              <h4>Order Complete!</h4>
+              <a href="product.html" class="btn btn-secondary">Back to shoping</a>
               </div>
           </div>
       </div>
