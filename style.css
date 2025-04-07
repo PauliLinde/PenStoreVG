@@ -99,6 +99,10 @@ input[type="submit"] {
     width: 20%;
 }
 
+#completeOrder {
+    min-width: 70%;
+}
+
 /* Footer styling */
 footer {
     margin-top: auto;
