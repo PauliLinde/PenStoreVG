@@ -28,23 +28,27 @@
       </header>
 
       <!--Vald produkt-->
-      <div id="itemToOrder" class="card"></div>
+      <main class="py-5">
+        <div class="container">
+          <div id="itemToOrder" class="card"></div>
+        </div>
+      </main>
     
 
     <form name="customerForm" onsubmit="validateForm(event)">
-        <label for="customerName" id="nameLable">För- och Efternamn:</label><br />
+        <label for="customerName" id="nameLable">First- and Last Name:</label><br />
         <input type="text" name="customerName" id="customerName" placeholder="Sven Svensson"/> <br />
-        <label for="text" id="mailLable">E-post:</label><br />
+        <label for="text" id="mailLable">E-mail:</label><br />
         <input type="text" name="e-mail" id="e-mail" placeholder="namn@mail.com"/><br />
-        <label for="phoneNumber" id="phoneLable">Telefonnummer:</label><br />
+        <label for="phoneNumber" id="phoneLable">Phone Number:</label><br />
         <input type="text" name="phoneNumber" id="phoneNumber" placeholder="073123456"/><br />
-        <label for="street" id="streetLable">Gatuadress:</label><br />
+        <label for="street" id="streetLable">Street:</label><br />
         <input type="text" name="street" id="street" placeholder="Strandvägen 1"/><br />
-        <label for="zipCode" id="zipLable">Postnummer:</label><br />
+        <label for="zipCode" id="zipLable">Zip code:</label><br />
         <input type="text" name="zipCode" id="zipCode" placeholder="12345"/><br />
-        <label for="city" id="cityLable">Ort:</label><br />
+        <label for="city" id="cityLable">City:</label><br />
         <input type="text" name="city" id="city" placeholder="Stockholm"/><br />
-        <input type="submit" value="Beställ" />
+        <input type="submit" value="Order" />
       </form>
       <h2></h2>
 
@@ -74,31 +78,8 @@
           </div>
       </div>
     </footer>
-      <!--<script>
-        function setItem(){
-
-const params = new URLSearchParams(window.location.search)
-const id = params.get('id')
-
-const product = JSON.parse(localStorage.getItem(id))
-console.log(product)
-
-document.getElementById('itemToOrder').innerHTML =
-  `<div class="row g-0">
-      <div class="col-md-4">
-        <img src="${product[0]}" class="img-fluid rounded-start" alt="${product[1]}">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">${product[1]}</h5>
-          <p class="card-text">${product[2]}</p>
-          <p class="card-text"><small class="text-body-secondary">${product[3]}</small></p>
-        </div>
-      </div>
-    </div>
-`;
-}
-      </script>-->
-      <script src="javascriptOrder.js"></script>
+    
+      <!--<script>-->
+      <script src="javascript.js"></script>
 </body>
 </html>
