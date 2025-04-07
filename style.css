@@ -80,6 +80,11 @@ main {
     min-width: 95%;
 }
 
+#image-order {
+    margin: 2rem;
+    width: 60%;
+}
+
 form {
     margin: 2rem;
 }
