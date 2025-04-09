@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body onload="getCart()">
     <!--rubrik-->
     <header class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
@@ -27,18 +27,23 @@
         </nav>
       </div>
     </header>
+
+
+    <div id="shopping-cart">
+        
+    </div>
   
 
     <!--huvudsektion -->
     <main class="py-5">
-      <section class="hero">
-    <div class="container text-center">
-        <h1>Welcome to Your Fashion & Electronics Store!</h1>
-        <p>Discover the latest trends in clothing, stunning jewelry, and cutting-edge electronics.</p>
-        <a href="product.html" class="btn btn-dark ">Shop Now</a>
-    </div>
-</section>
-    </main>
+        <div class="container">
+          <h2 class="text-center">Your cart</h2> <!-- Justerad rubrik: Tog bort kolumnklasser -->
+          <br>
+          <div class="row g-4" id="Cart">
+            <!-- Här kommer produkterna att läggas in från API -->
+          </div>
+        </div>
+      </main>
   
     <!--footer-->
     <footer class="main-footer py-4">
@@ -67,5 +72,7 @@
     </div>
   </footer>
 
+  <!--<script>-->
+    <script src="javascript.js"></script>
   </body>
 </html>
