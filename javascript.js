@@ -106,6 +106,35 @@ function addToCart(produktID){
   localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
 }
 
+function addMore(product) {
+  let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'))
+  let toAdd = shoppingCart.find(item => item [1] === product)
+  toAdd[4] += 1
+  localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
+  getCart()
+}
+
+function removeOne(product) {
+  let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'))
+  let toRemoveOne = shoppingCart.find(item => item [1] === product)
+  
+  if(toRemoveOne[4] <= 1) {
+    shoppingCart = shoppingCart.filter(item => item[1] !== product)
+    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
+    getCart()
+  }
+  else {
+    toRemoveOne[4] -= 1
+    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
+    getCart()
+  }
+}
+
+function removeAll() {
+  localStorage.removeItem('shoppingCart')
+  getCart()
+}
+
 function  getCart(){
   let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'))
   let output = '';
@@ -121,8 +150,10 @@ function  getCart(){
           <div class="col-md-8">
           <div class="card-body">
               <h5 class="card-title">${product[1]}</h5>
-              <p class="card-text"><small class="text-body-secondary">${
-                product[4]}</small></p>
+              <p class="card-text"><small class="text-body-secondary"><button onclick="removeOne('${product[1]}')"><img src="images/minus.png" alt="minus" width="15px"></button>
+              ${product[4]}
+              <button onclick="addMore('${product[1]}')"><img src="images/add.png" alt="add" width="15px"></button>
+              </small></p>
               </div>
           </div>
       </div>
