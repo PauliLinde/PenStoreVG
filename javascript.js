@@ -1,7 +1,3 @@
-/*let shoppingCart = [];
-
-localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))*/
-
 function loadProductPage() {
   fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
@@ -131,7 +127,7 @@ function  getCart(){
           </div>
       </div>
       `;
-  });
+    });
   }
   else{
     console.log("Korgen är tom")
