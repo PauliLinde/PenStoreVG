@@ -155,7 +155,7 @@ function  getCart(){
           <div class="col-md-8">
           <div class="card-body">
               <h5 class="card-title">${product[1]}</h5>
-              <p class="card-text"><small class="text-body-secondary">${product[3]} kr</small></p>
+              <p class="card-text"><small class="text-body-secondary">${(product[4] * product[3]).toFixed(2)} kr</small></p>
               <p class="card-text"><small class="text-body-secondary"><button onclick="removeOne('${product[1]}')"><img src="images/minus.png" alt="minus" width="15px"></button>
               ${product[4]}
               <button onclick="addMore('${product[1]}')"><img src="images/add.png" alt="add" width="15px"></button>
