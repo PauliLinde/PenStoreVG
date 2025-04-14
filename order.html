@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="style.css" />
 </head>
-<body onload="loadProduct()">
+<body onload="loadProduct(), updateCart()">
     <!--rubrik-->
     <header class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -22,18 +22,18 @@
             <ul class="navbar-nav">
               <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
-              <li class="nav-item"><a class="nav-link" href="shoppingCart.html"><img src="images/shopping-cart.png" alt="shopping cart" width="20px"></a></li>
+              <li class="nav-item"><a class="nav-link" href="shoppingCart.html" id="cartAmount"><img src="images/shopping-cart.png" alt="shopping cart" width="20px"></a></li>
             </ul>
           </nav>
         </div>
       </header>
 
-      <!--Vald produkt-->
+      <!--Vald produkt
       <main class="py-5">
         <div class="container">
           <div id="itemToOrder" class="card"></div>
         </div>
-      </main>
+      </main>-->
     
 
     <form name="customerForm" onsubmit="validateForm(event)">

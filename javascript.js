@@ -15,9 +15,8 @@ function render(products) {
   <img src="${product.image}" class="card-img-top" alt="${product.title}">
   <div class="card-body">
     <h5 class="card-title">${product.title}</h5>
-    <a href="order.html?id=${product.id}" class="btn btn-secondary" onclick="addToCart(${product.id})">Buy ${(
-      product.price * 10
-    ).toFixed(2)} kr</a>
+    <button class="btn btn-secondary" onclick="addToCart(${product.id})">Add to cart ${(
+      product.price * 10).toFixed(2)} kr</a>
   </div>
 </div>
 </div>
@@ -39,7 +38,7 @@ function render(products) {
 }
 
 //Hämtar valda produktens id
-function loadProduct() {
+/*function loadProduct() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
   localStorage.setItem("orderId", id);
@@ -63,7 +62,7 @@ function loadProduct() {
         </div>
     </div>
     `;
-}
+}*/
 
 function loadCompleteOrder() {
   console.log(localStorage.getItem("orderId"));
@@ -71,22 +70,11 @@ function loadCompleteOrder() {
   let orderId = localStorage.getItem("orderId");
   const product = JSON.parse(localStorage.getItem(orderId));
 
+  removeAll()
+
   document.getElementById("completeOrder").innerHTML = `<div class="row g-0">
-          <div class="col-md-4">
-              <img src="${product[0]}" id="image-order" class="img-fluid rounded-start" alt="${product[1]}">
-          </div>
-          <div class="col-md-8">
-          <div class="card-body">
-              <h5 class="card-title">${product[1]}</h5>
-              
-          <!--Utan info text 
-              <p class="card-text">${product[2]}</p>
-              -->
-              <p class="card-text"><small class="text-body-secondary">${product[3]} kr</small></p>
               <h4>Order Complete!</h4>
               <a href="product.html" class="btn btn-secondary">Back to shoping</a>
-              </div>
-          </div>
       </div>
       `;
 }
@@ -103,15 +91,29 @@ function addToCart(produktID){
     product[4] = 1
     shoppingCart.push(product)
   }
-  localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
+  localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
+  updateCart()
 }
 
 function addMore(product) {
   let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'))
   let toAdd = shoppingCart.find(item => item [1] === product)
   toAdd[4] += 1
+
   localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
-  getCart()
+  updateCart()
+}
+
+function updateCart() {
+  let amount = countAmountOfItems();
+  let cartUpdate = `<img src="images/shopping-cart.png" alt="shopping cart" width="20px">`;
+
+  if (amount > 0) {
+    cartUpdate += ` ${amount}`;
+  }
+
+  document.getElementById('cartAmount').innerHTML = cartUpdate;
+  getCart();
 }
 
 function removeOne(product) {
@@ -120,26 +122,29 @@ function removeOne(product) {
   
   if(toRemoveOne[4] <= 1) {
     shoppingCart = shoppingCart.filter(item => item[1] !== product)
-    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
-    getCart()
   }
   else {
     toRemoveOne[4] -= 1
-    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
-    getCart()
   }
+  localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
+  updateCart()
 }
 
 function removeAll() {
   localStorage.removeItem('shoppingCart')
-  getCart()
+  updateCart()
 }
 
 function  getCart(){
   let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'))
   let output = '';
 
-  if(shoppingCart) {
+  const cartElement = document.getElementById("Cart");
+  if (!cartElement) {
+    return;
+  }
+
+  if (shoppingCart && shoppingCart.length > 0) {
     console.log("Det finns varor")
     
     shoppingCart.forEach((product) => {
@@ -150,6 +155,7 @@ function  getCart(){
           <div class="col-md-8">
           <div class="card-body">
               <h5 class="card-title">${product[1]}</h5>
+              <p class="card-text"><small class="text-body-secondary">${product[3]} kr</small></p>
               <p class="card-text"><small class="text-body-secondary"><button onclick="removeOne('${product[1]}')"><img src="images/minus.png" alt="minus" width="15px"></button>
               ${product[4]}
               <button onclick="addMore('${product[1]}')"><img src="images/add.png" alt="add" width="15px"></button>
@@ -159,13 +165,47 @@ function  getCart(){
       </div>
       `;
     });
+    let sum = calculateTheSum()
+    output += `
+    <div id="sumToPay"></div>
+      <h4>Sum to pay: ${sum} kr</h4>
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-dark" onclick="window.location.href='order.html'">Buy</button>
+        <button type="button" class="btn btn-outline-dark" onclick="removeAll()">Remove cart</button>
+      </div>
+    `;
   }
   else{
     console.log("Korgen är tom")
     output += `<h4>Your cart is empty</h4>`
   }
 
-  document.getElementById("Cart").innerHTML = output;
+  cartElement.innerHTML = output;
+}
+
+function calculateTheSum() {
+  let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'))
+  let sum = 0;
+
+    shoppingCart.forEach((product) => {
+
+      sum += (product[4] * product[3])
+    });
+    return sum.toFixed(2)
+}
+
+function countAmountOfItems() {
+  let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'))
+  let amount = 0;
+
+  if (shoppingCart && shoppingCart.length > 0){
+    shoppingCart.forEach((product) => {
+
+      amount += product[4]
+    });
+  }
+    
+    return amount
 }
 
 function validateForm(e) {
